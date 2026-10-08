@@ -89,6 +89,41 @@ set student a to student b
 set student b to temp
 ```
 
+## Student.cpp
+```
+cool student code goes here
+```
+
+## Address.cpp
+```
+include the header and iostream
+
+define the constructor for Address
+  street = "placeholderStreet";
+  city = "placeholderCity";
+  state = "placeholderState";
+  zip = "placeholderZip";
+
+define the init
+  accepting data from the bigger box of Student, place it into the following variables
+  street, city, state, and zip in that order.
+
+define print address
+  print the properties of the class in the following order and syntax
+  'street', 'city' 'state' 'zip'
+
+getters
+  seems self explanatory, simply return the value of sought property
+
+setters
+  also seems self explanatory, but take the variable passed and assign it to the relevant property
+```
+
+## Date.cpp
+```
+lorum ipsum
+```
+
 ## Student.h
 ```
 #ifndef STUDENT_H
@@ -118,6 +153,7 @@ class Student{
     void setLastName(std::string lastName);
     int getCreditHours();
     void setCreditHours(int creditHours);
+};
 ```
 
 ## Address.h
