@@ -7,13 +7,13 @@ class Date{
     int day;
     int month;
     int year;
-    // const std::string WORDMONTH[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    const std::string WORDMONTH[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
   public:
     Date();
     void init(std::string dateString);
     void printDate();
-    // void printDateAlternate(); // Throws a crazy error
+    void printDateAlternate(); // Throws a crazy error
     std::string getDateString();
     void setDateString(std::string dateString);
     int getDay();

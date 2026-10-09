@@ -38,11 +38,9 @@ void Date::printDate(){
 } // end printDate
 
 // Throws a crazy error
-/*
 void Date::printDateAlternate(){
-  std::cout << WORDMONTH[month] << ' ' << day << ", " << year << std::endl;
+  std::cout << WORDMONTH[month-1] << ' ' << day << ", " << year << std::endl;
 } // end printDateAlternate
-*/
 
 std::string Date::getDateString(){
   return dateString;
