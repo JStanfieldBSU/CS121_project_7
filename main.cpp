@@ -25,7 +25,7 @@ void testDate(){
  Date d;
  d.init("01/27/1997");
  d.printDate();
- // d.printDateAlternate(); // Throws a crazy error
+ d.printDateAlternate();
 } // end testDate
 
 /*void testStudent(){

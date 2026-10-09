@@ -36,17 +36,12 @@ void Date::init(std::string dateString){
 void Date::printDate(){
   std::string WORDMONTH[] = {"ERROR", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
   std::string mString = WORDMONTH[month];
-  // std::cout << day << '/' << month << '/' << year << std::endl;
   std::cout << mString << ' ' << day << ", " << year << std::endl;
 } // end printDate
 
-// Throws a crazy error
-/*
 void Date::printDateAlternate(){
-  
-      	std::cout << WORDMONTH[month] << ' ' << day << ", " << year << std::endl;
+  std::cout << month << '/' << day << '/' << year << std::endl;
 } // end printDateAlternate
- */
 
 std::string Date::getDateString(){
   return dateString;
