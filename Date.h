@@ -7,7 +7,6 @@ class Date{
     int day;
     int month;
     int year;
-    const std::string WORDMONTH[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
   public:
     Date();

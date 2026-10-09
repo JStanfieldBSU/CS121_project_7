@@ -4,7 +4,7 @@
 #include "Date.h"
 
 Date::Date(){
-  dateString = "12345678";
+  dateString = "12/34/5678";
   day = 87;
   month = 65;
   year = 4321;
@@ -19,13 +19,13 @@ void Date::init(std::string dateString){
   // std::string dateString = "12/24/1999"; 
 
   ss.str(dateString);
-  getline(ss, sDay, '/');
   getline(ss, sMonth, '/');
+  getline(ss, sDay, '/');
   getline(ss, sYear, '\n');
   ss.clear();
   ss.str("");
-  ss << sDay << " " << sMonth << " " << sYear;
-  ss >> day >> month >> year;
+  ss << sMonth << " " << sDay << " " << sYear;
+  ss >> month >> day >> year;
   /*
   std::cout << day << '\n' << month << '\n' << year << std::endl;
   std::cout << day << '/' << month << '/' << year << std::endl;
@@ -34,13 +34,19 @@ void Date::init(std::string dateString){
 } // end init
 
 void Date::printDate(){
-  std::cout << day << '/' << month << '/' << year << std::endl;
+  std::string WORDMONTH[] = {"ERROR", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+  std::string mString = WORDMONTH[month];
+  // std::cout << day << '/' << month << '/' << year << std::endl;
+  std::cout << mString << ' ' << day << ", " << year << std::endl;
 } // end printDate
 
 // Throws a crazy error
+/*
 void Date::printDateAlternate(){
-  std::cout << WORDMONTH[month-1] << ' ' << day << ", " << year << std::endl;
+  
+      	std::cout << WORDMONTH[month] << ' ' << day << ", " << year << std::endl;
 } // end printDateAlternate
+ */
 
 std::string Date::getDateString(){
   return dateString;
