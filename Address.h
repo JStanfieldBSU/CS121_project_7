@@ -21,3 +21,5 @@ class Address{
     std::string getZip();
     void setZip(std::string zip);
 };
+
+#endif

@@ -19,3 +19,5 @@ class Date{
     int getYear();
     void setYear(int year);
 };
+
+#endif

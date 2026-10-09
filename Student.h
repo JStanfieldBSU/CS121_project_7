@@ -26,3 +26,5 @@ class Student{
     int getCreditHours();
     void setCreditHours(int creditHours);
 };
+
+#endif
