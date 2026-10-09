@@ -15,12 +15,12 @@
   + ~Student()
   + void init(studentString)
   + void printStudent()
-  + string getFirstName(firstName : string)
-  + void setFirstName()
-  + string getLastName(lastName : string)
-  + void setLastName()
-  + int getCreditHours(creditHours : int)
-  + void setCreditHours()
+  + string getFirstName()
+  + void setFirstName(firstName : string)
+  + string getLastName()
+  + void setLastName(lastName : string)
+  + int getCreditHours()
+  + void setCreditHours(creditHours : int)
 ```
 
 ## Address Class
@@ -33,14 +33,14 @@
   + Address()
   + void init(street : string, city : string, state : string, zip : string)
   + void printAddress()
-  + string getStreet(street : string)
-  + void setStreet()
-  + string getCity(city : string)
-  + void setCity()
-  + string getState(state : string)
-  + void setState()
-  + string getZip(zip : string)
-  + void setZip()
+  + string getStreet()
+  + void setStreet(street : string)
+  + string getCity()
+  + void setCity(city : string)
+  + string getState()
+  + void setState(state : string)
+  + string getZip()
+  + void setZip(zip : string)
 ```
 
 ## Date Class
@@ -49,16 +49,20 @@
   # day : int
   # month : int
   # year : int
+  # const WORDMONTH[12] : const string[12]
 
   + Date()
-  + void init(dateString)
+  + void init(dateString : string)
   + void printDate()
-  + int getDay(day : int)
-  + void setDay()
-  + int getMonth(month : int)
-  + void setMonth()
-  + int getYear(year : int)
-  + void setYear()
+  + void printDateAlternate()
+  + string getDateString()
+  + void setDateString(dateString : string)
+  + int getDay()
+  + void setDay(day : int)
+  + int getMonth()
+  + void setMonth(month : int)
+  + int getYear()
+  + void setYear(year : int)
 ```
 
 ## Main.cpp
@@ -112,16 +116,46 @@ define print address
   print the properties of the class in the following order and syntax
   'street', 'city' 'state' 'zip'
 
-getters
+getters (street, city, state, zip)
   seems self explanatory, simply return the value of sought property
 
-setters
+setters (street, city, state, zip)
   also seems self explanatory, but take the variable passed and assign it to the relevant property
 ```
 
 ## Date.cpp
 ```
-lorum ipsum
+include the header, iostream, string, and sstream
+
+define the constructor for Date
+  datestring = "12345678";
+  day = 00;
+  month = 00;
+  year = 0000;
+
+define the init
+  accepting datestring from the input, split it apart and place it into its proper spaces.
+  define a sstream to parse the data
+  define three temporary strings for day month and year
+  assign the input datestring to the property datestring
+  write the data within datestring to sstream
+  getline sstream with the end character / twice and assign to day and month
+  getline sstream with the end character \n to grab the year
+  clear and set sstream string to ""
+  place each temporary string into the sstream in order separated by spaces
+  push sstream into the properties in the correct order
+
+define printDate
+  print day '/' month '/' year;
+
+define printDateAlternate
+  print WORDMONTH[month] ' ' day ', ' year;
+
+getters (datestring, day, month, year)
+  seems self explanatory, simply return the value of sought property
+
+setters (datestring, day, month, year)
+  also seems self explanatory, but take the variable passed and assign it to the relevant property
 ```
 
 ## Student.h
@@ -154,6 +188,8 @@ class Student{
     int getCreditHours();
     void setCreditHours(int creditHours);
 };
+
+#endif
 ```
 
 ## Address.h
@@ -181,6 +217,8 @@ class Address{
     std::string getZip();
     void setZip(std::string zip);
 };
+
+#endif
 ```
 
 ## Date.h
@@ -191,14 +229,18 @@ class Address{
 class Date{
   protected:
     std::string dateString;
-    std::string day;
-    std::string month;
-    std::string year;
+    int day;
+    int month;
+    int year;
+    const std::string WORDMONTH[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
   public:
     Date();
-    void init(int day, int month, int year);
+    void init(std::string dateString);
     void printDate();
+    void printDateAlternate();
+    std::string getDateString();
+    void setDateString(std::string dateString);
     int getDay();
     void setDay(int day);
     int getMonth();
@@ -206,6 +248,8 @@ class Date{
     int getYear();
     void setYear(int year);
 };
+
+#endif
 ```
 
 do i need setters? honestly probably not. probably better to keep them though. Even if they're unneccesary, they could be used for a blackbelt at the end.
