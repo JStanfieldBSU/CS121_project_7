@@ -96,6 +96,45 @@ set student b to temp
 ## Student.cpp
 ```
 cool student code goes here
+
+the student constructor should only seed the properties that are not related to other objects 
+or maybe since the properties are pointers, they should be created in the constructor and then modified in the init?
+
+Student Constructor
+  studentString = "Place,Holder,1234 Lorem Ipsum,Dolor,SIT,00000,99/99/9999,11/11/1111,255";
+  firstName = "Error";
+  lastName = "Bug";
+  Address home;
+  Date birth;
+  Date grad;
+  creditHours = 777;
+
+student init
+  init accepts the string read from a line of the csv
+  sstream
+  temp string sCredit
+  then use getline with a comma delimiter to get each necessary string and place it in the proper space. should look something like
+  firstName = getline
+  lastName = getline
+  home.init(getline, getline, getline, getline)
+  birth.init(getline)
+  grad.init(getline)
+  getline(ss, sCredit, '\n')
+  clear and set ss string to ""
+  put sCredit into ss
+  push ss out to creditHours to convert to int
+  
+print Student
+  print first name last name new line
+  call printAddress from home
+  print "DOB: " and then call printDateAlternate from birth
+  print "Grad: " and then call printDateAlternate from grad
+  print "Credits: " and then print creditHours
+
+getters (studentString, firstName, lastName, creditHours)
+  seems self explanatory, simply return the value of sought property
+setters (studentString, firstName, lastName, creditHours)
+  also seems self explanatory, but take the variable passed and assign it to the relevant property
 ```
 
 ## Address.cpp
@@ -253,3 +292,5 @@ class Date{
 ```
 
 do i need setters? honestly probably not. probably better to keep them though. Even if they're unneccesary, they could be used for a blackbelt at the end.
+
+maybe i could make it so you could add a second file of students and be able to see them as one list and sort them together.
